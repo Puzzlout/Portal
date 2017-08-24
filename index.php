@@ -1,5 +1,7 @@
 <?php
-  header("X-Robots-Tag: noindex, nofollow", true);
+  if ($_SERVER['SERVER_NAME'] !== "puzzlout.com") {
+    header("X-Robots-Tag: noindex, nofollow", true);
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
