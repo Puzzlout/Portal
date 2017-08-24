@@ -1,3 +1,6 @@
+<?php
+  header("X-Robots-Tag: noindex, nofollow", true);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
