@@ -9,12 +9,23 @@
 <head>
 
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="author" content="Bernard Vignal">
 
     <title>Puzzlout - Solve life problems with web-based software</title>
+    <meta name="description" content="Request a quote, you won't disappointed!">
+    <meta name="copyright" content="Puzzlout, tous droits réservés © 2017">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Puzzlout - Solve life problems with web-based software">
+    <meta property="og:url" content="https://puzzlout.com/">
+    <!--<meta property="og:image" content="https://puzzlout-6af8.kxcdn.com/img/">-->
+
 
     <!-- Bootstrap Core CSS -->
     <link href="https://puzzlout-6af8.kxcdn.com/css/bootstrap.min.css" rel="stylesheet">
@@ -190,10 +201,10 @@
 </footer>
 
 <!-- jQuery -->
-<script src="js/jquery.js"></script>
+<script src="https://puzzlout-6af8.kxcdn.com/js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src="https://puzzlout-6af8.kxcdn.com/js/bootstrap.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
 <script>
