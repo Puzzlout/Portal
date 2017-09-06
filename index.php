@@ -21,7 +21,8 @@
     <meta name="description" content="Request a quote, you won't disappointed!">
     <meta name="copyright" content="Puzzlout, tous droits réservés © 2017">
     <meta name="robots" content="index, follow">
-
+    <meta name="google-site-verification" content="mYIhA71bsFzMnExn7Qt3t0Sb4nU4WWEGML-1HAl28UM" />
+  
     <meta property="og:title" content="Puzzlout - Solve life problems with web-based software">
     <meta property="og:url" content="https://puzzlout.com/">
     <!--<meta property="og:image" content="https://puzzlout-6af8.kxcdn.com/img/">-->
