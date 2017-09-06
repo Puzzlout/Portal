@@ -15,7 +15,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="apple-touch-fullscreen" content="yes">
-    <meta name="author" content="Bernard Vignal">
+    <meta name="author" content="Jérémie Litzler">
 
     <title>Puzzlout - Solve life problems with web-based software</title>
     <meta name="description" content="Request a quote, you won't disappointed!">
