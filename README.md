@@ -55,3 +55,7 @@ Then run `FONTAWESOME_NPM_AUTH_TOKEN=YOUR_FA_TOKEN npm install --save @fortaweso
 You can find the token on your [Font Awesome account](https://fontawesome.com/account) under `Pro npm Package Token` section.
 
 If any issue arise, [checkout Font Awesome website](https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers).
+
+## Setup in Netlify
+
+Set the command `gulp` in the deploy settings.
