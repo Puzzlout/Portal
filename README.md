@@ -58,4 +58,5 @@ If any issue arise, [checkout Font Awesome website](https://fontawesome.com/how-
 
 ## Setup in Netlify
 
-Set the command `gulp` in the deploy settings.
+- Set the command `gulp` in the deploy settings.
+- Add the environment variable `FONTAWESOME_NPM_AUTH_TOKEN` with the token value.
