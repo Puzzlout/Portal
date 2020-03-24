@@ -54,8 +54,7 @@ a {
     grid-template-columns:
       minmax(1em, 1fr)
       /*Why 3? Because we have 3 skills !*/
-      repeat(3, minmax(145px, 320px))
-      minmax(1em, 1fr);
+      repeat(3, minmax(120px, 320px)) minmax(1em, 1fr);
     -moz-column-gap: 2em;
     column-gap: 2em;
   }
@@ -64,12 +63,11 @@ a {
 @media (min-width: 800px) {
   .main-grid {
     grid-template-columns:
-      minmax(5em, 1fr)
-      repeat(6, minmax(95px, 200px))
-      minmax(5em, 1fr);
-    -moz-column-gap: 1em;
-    column-gap: 1em;
+      minmax(5em, 1fr) repeat(6, minmax(95px, 200px)) minmax(5em, 1fr);
+    -moz-column-gap: 2em;
+    column-gap: 4em;
   }
 }
+
 /* End - Must-have Layout */
 /*===================================*/

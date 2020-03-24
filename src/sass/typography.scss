@@ -1,28 +1,368 @@
+/*===================================*/
+/* Theme */
+$color-light: #fff;
+$color-dark: #000;
+$color-accent: #ffe600;
+$bg-color-light: $color-light;
+$bg-color-dark: $color-dark;
+$bg-color-accent: $color-accent;
+
 .theme-color-light {
-  color: #fff;
+  color: $color-light;
 }
+
 .theme-color-dark {
-  color: #000;
+  color: $color-dark;
 }
+
 .theme-bg-light {
-  background-color: #fff;
+  background-color: $bg-color-light;
 }
+
 .theme-bg-dark {
-  background-color: #000;
+  background-color: $bg-color-dark;
 }
+
 .theme-color-accent {
-  color: #ffe600;
+  color: $color-accent;
 }
+
 .theme-bg-accent {
-  background-color: #ffe600;
+  background-color: $bg-color-accent;
 }
+
 .theme-bb-accent {
-  border-bottom: 2px solid #ffe600;
+  border-bottom: 2px solid $color-accent;
 }
+
 .theme-bb-accent:hover {
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid $color-light;
 }
 
 body {
-  color: #000;
+  color: $color-dark;
+  font-family: "Source Sans Pro", sans-serif;
 }
+
+/*===================================*/
+/* Typography */
+/* General Typography */
+
+h1,
+h2 {
+  margin: 0;
+}
+
+h1,
+.logo-accent,
+.logo-light {
+  font-size: 1.4rem;
+}
+
+h2 {
+  font-size: 1.125rem;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 2px;
+  background-color: $color-accent;
+  margin-top: 0.25em;
+}
+
+.h2-title-underline-center {
+  text-align: center;
+}
+
+.h2-title-underline-center::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  color: #404040;
+  text-align: left;
+}
+
+/* Header */
+nav {
+  text-align: center;
+}
+
+.close-nav i:hover,
+.close-nav i:focus,
+.close-nav i:active {
+  color: #ffe600;
+}
+
+.nav-link {
+  margin-top: 2em;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.nav-link,
+a {
+  text-transform: lowercase;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+  transform: scale(1.5);
+}
+
+
+
+.current {
+  padding-bottom: 0.25rem;
+  border-bottom: 2px #ffe600 solid;
+}
+
+.current:hover {
+  border-bottom: 2px #fff solid;
+}
+
+/* Hero */
+.hero-title,
+.hero-title+p {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  padding: 0.5em;
+}
+
+
+.hero-title+p {
+  letter-spacing: 1;
+}
+
+/* Skills */
+.skills-title {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.skills-title::after {
+  margin: 0 auto;
+}
+
+.article-description {
+  text-align: center;
+}
+
+.article-description:last-child {
+  margin-bottom: 0;
+}
+
+/* Footer */
+footer {
+  background-color: #ebebeb;
+  text-align: center;
+}
+
+.social-link {
+  color: #000;
+  font-size: 2em;
+  margin: 0 0.25em;
+}
+
+.social-link:hover,
+.social-link:active,
+.social-link:focus {
+  color: #ffe600;
+  border-radius: 10em;
+  padding: 5px 10px;
+}
+
+.copyright {
+  font-size: 0.625rem;
+}
+
+@media (min-width: 600px) {
+
+  .hero-title,
+  .hero-title+p {
+    padding: 2em;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus,
+  .nav-link:active {
+    transform: scale(1.2);
+  }
+}
+
+@media (min-width: 1400px) {
+
+  h1,
+  .logo-accent,
+  .logo-light {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1.125rem;
+  }
+}
+
+/* End - Typography */
+/*===================================*/
+
+/*===================================*/
+/* Interactive elements */
+
+a,
+a i {
+  transform: scale(1);
+  transition: transform 500ms;
+}
+
+a:hover,
+a:focus,
+a:active,
+a i:hover,
+a i:focus,
+a i:active {
+  transform: scale(1.1);
+}
+
+a:hover,
+a:focus {
+  color: #ffe600;
+  background-color: #000;
+}
+
+.btn {
+  text-transform: uppercase;
+}
+
+button,
+.btn,
+input,
+textarea {
+  border: 0;
+  display: inline-block;
+  border-radius: 2px;
+  padding: 0.5em 1.75em;
+  transform: scale(1);
+  transition: transform 500ms;
+  cursor: pointer;
+  text-decoration: none;
+  justify-self: start;
+}
+
+input,
+textarea {
+  border: 1px #404040 solid;
+}
+
+button:hover,
+button:focus,
+button:active,
+.btn:hover,
+.btn:focus,
+.btn:active {
+  transform: scale(1.1);
+}
+
+button:hover,
+button:focus,
+button:active,
+.btn:hover,
+.btn:focus,
+.btn:active,
+input:hover,
+input:active,
+input:focus,
+textarea:hover,
+textarea:active,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px rgb(187, 172, 41), 0 0 0 0.1rem hsl(59, 100%, 49%);
+  background-color: #000;
+  color: #ffe600;
+}
+
+/* End - Interactive elements */
+
+/*===================================*/
+/* Interactive elements */
+
+a,
+a i {
+  transform: scale(1);
+  transition: transform 500ms;
+}
+
+a:hover,
+a:focus,
+a:active,
+a i:hover,
+a i:focus,
+a i:active {
+  transform: scale(1.1);
+}
+
+a:hover,
+a:focus {
+  color: #ffe600;
+  background-color: #000;
+}
+
+button,
+.btn,
+input,
+textarea {
+  border: 0;
+  display: inline-block;
+  border-radius: 2px;
+  padding: 0.5em 1.75em;
+  transform: scale(1);
+  transition: transform 500ms;
+  cursor: pointer;
+  text-decoration: none;
+  justify-self: start;
+}
+
+input,
+textarea {
+  border: 1px #404040 solid;
+}
+
+button:hover,
+button:focus,
+button:active,
+.btn:hover,
+.btn:focus,
+.btn:active {
+  transform: scale(1.1);
+}
+
+button:hover,
+button:focus,
+button:active,
+.btn:hover,
+.btn:focus,
+.btn:active,
+input:hover,
+input:active,
+input:focus,
+textarea:hover,
+textarea:active,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px rgb(187, 172, 41), 0 0 0 0.1rem hsl(59, 100%, 49%);
+  background-color: #000;
+  color: #ffe600;
+}
+
+/* End - Interactive elements */
+/* End - Theme */
