@@ -1,11 +1,35 @@
 /*===================================*/
-/* Theme */
+/* Colors */
+/* Theme 1 */
 $color-light: #fff;
 $color-dark: #000;
-$color-accent: #ffe600;
+$color-accent: #184DEC;
 $bg-color-light: $color-light;
+$bg-color-footer: #d9e1e8;
 $bg-color-dark: $color-dark;
 $bg-color-accent: $color-accent;
+$text-color: #343838;
+$bd-color: #343838;
+$btn-shadow-color-start: #194DEC;
+$btn-shadow-color-end: #8ec4f0;
+$hero-bg-color: rgba(52, 56, 56, 0.5);
+
+/* End - Theme 1 */
+/* Theme 2 
+$color-light: #d9e1e8;
+$color-dark: #282c37;
+$color-accent: #2b90d9;
+$bg-color-light: $color-light;
+$bg-color-footer: #d9e1e8;
+$bg-color-dark: $color-dark;
+$bg-color-accent: $color-accent;
+$text-color: $color-dark;
+$bd-color: $color-dark;
+$btn-shadow-color-start: rgb(187, 172, 41);
+$btn-shadow-color-end: hsl(59, 100%, 49%);
+$hero-bg-color: rgba(40, 44, 55, 0.4);
+
+/* End - Theme 2 */
 
 .theme-color-light {
   color: $color-light;
@@ -84,7 +108,7 @@ h2::after {
 }
 
 p {
-  color: #404040;
+  color: $text-color;
   text-align: left;
 }
 
@@ -96,7 +120,7 @@ nav {
 .close-nav i:hover,
 .close-nav i:focus,
 .close-nav i:active {
-  color: #ffe600;
+  color: $color-accent;
 }
 
 .nav-link {
@@ -116,25 +140,22 @@ a {
   transform: scale(1.5);
 }
 
-
-
 .current {
-  padding-bottom: 0.25rem;
-  border-bottom: 2px #ffe600 solid;
+  padding-bottom: 2px;
+  border-bottom: 2px $color-accent solid;
 }
 
 .current:hover {
-  border-bottom: 2px #fff solid;
+  border-bottom: 2px $color-light solid;
 }
 
 /* Hero */
 .hero-title,
 .hero-title+p {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: $hero-bg-color;
   border-radius: 2px;
   padding: 0.5em;
 }
-
 
 .hero-title+p {
   letter-spacing: 1;
@@ -160,12 +181,12 @@ a {
 
 /* Footer */
 footer {
-  background-color: #ebebeb;
+  background-color: $bg-color-footer;
   text-align: center;
 }
 
 .social-link {
-  color: #000;
+  color: $color-dark;
   font-size: 2em;
   margin: 0 0.25em;
 }
@@ -173,7 +194,7 @@ footer {
 .social-link:hover,
 .social-link:active,
 .social-link:focus {
-  color: #ffe600;
+  color: $color-accent;
   border-radius: 10em;
   padding: 5px 10px;
 }
@@ -236,8 +257,8 @@ a i:active {
 
 a:hover,
 a:focus {
-  color: #ffe600;
-  background-color: #000;
+  color: $color-accent;
+  background-color: $bg-color-light;
 }
 
 .btn {
@@ -261,7 +282,7 @@ textarea {
 
 input,
 textarea {
-  border: 1px #404040 solid;
+  border: 1px solid;
 }
 
 button:hover,
@@ -286,83 +307,9 @@ textarea:hover,
 textarea:active,
 textarea:focus {
   outline: none;
-  box-shadow: 0 0 0 1px rgb(187, 172, 41), 0 0 0 0.1rem hsl(59, 100%, 49%);
-  background-color: #000;
-  color: #ffe600;
+  box-shadow: 0 0 0 1px $btn-shadow-color-start, 0 0 0 0.1rem $btn-shadow-color-end;
 }
 
 /* End - Interactive elements */
-
 /*===================================*/
-/* Interactive elements */
-
-a,
-a i {
-  transform: scale(1);
-  transition: transform 500ms;
-}
-
-a:hover,
-a:focus,
-a:active,
-a i:hover,
-a i:focus,
-a i:active {
-  transform: scale(1.1);
-}
-
-a:hover,
-a:focus {
-  color: #ffe600;
-  background-color: #000;
-}
-
-button,
-.btn,
-input,
-textarea {
-  border: 0;
-  display: inline-block;
-  border-radius: 2px;
-  padding: 0.5em 1.75em;
-  transform: scale(1);
-  transition: transform 500ms;
-  cursor: pointer;
-  text-decoration: none;
-  justify-self: start;
-}
-
-input,
-textarea {
-  border: 1px #404040 solid;
-}
-
-button:hover,
-button:focus,
-button:active,
-.btn:hover,
-.btn:focus,
-.btn:active {
-  transform: scale(1.1);
-}
-
-button:hover,
-button:focus,
-button:active,
-.btn:hover,
-.btn:focus,
-.btn:active,
-input:hover,
-input:active,
-input:focus,
-textarea:hover,
-textarea:active,
-textarea:focus {
-  outline: none;
-  box-shadow: 0 0 0 1px rgb(187, 172, 41), 0 0 0 0.1rem hsl(59, 100%, 49%);
-  background-color: #000;
-  color: #ffe600;
-}
-
-/* End - Interactive elements */
 /* End - Theme */
