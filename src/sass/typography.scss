@@ -20,7 +20,7 @@ $h2: 1.125rem;
 $p: 1rem;
 $fs-logo: 1.4rem;
 $fs-social-link: 2rem;
-$fs-fine-print: 0.625rem;
+$fs-fine-print: 0.825rem;
 /* Animations */
 $text-scale: 1;
 $text-scaled: 1.1;
@@ -153,6 +153,7 @@ a {
 
 .hero-title+p {
   letter-spacing: 2;
+  font-size: $p * 1.25;
 }
 
 /* Skills */
@@ -192,7 +193,7 @@ footer {
 
   .hero-title,
   .hero-title+p {
-    padding: 2em;
+    // padding: 2em;
   }
 
   .nav-link:hover,

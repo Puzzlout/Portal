@@ -78,7 +78,6 @@ nav {
     padding: 8em 0 4em;
 }
 
-
 .hero>* {
     /* Centers the content of hero into the middle column */
     grid-column: 2 / -2;
@@ -119,14 +118,15 @@ footer {
     margin-bottom: 1em;
 }
 
-/* Breakpoint: 400px */
-@media (min-width: 400px) {
-    .hero>* {
+/* Breakpoint: 600px */
+@media (max-width: 600px) {
+
+    .hero-title,
+    .hero-description {
         margin-right: 20%;
     }
 }
 
-/* Breakpoint: 600px */
 @media (min-width: 600px) {
 
     .header-home,
@@ -192,21 +192,21 @@ footer {
 
 /* Breakpoint: 800px */
 @media (min-width: 800px) {
-    .hero>* {
-        grid-column: 2 / span 4;
-    }
+    // .hero>* {
+    //     grid-column: 2 / span 4;
+    // }
 
-    .skill {
-        grid-column: span 2;
-    }
+    // .skill {
+    //     grid-column: span 2;
+    // }
 
-    .skill:first-child {
-        /*Skip for the first skill the first column */
-        grid-column: 2 / span 2;
-    }
+    // .skill:first-child {
+    //     /*Skip for the first skill the first column */
+    //     grid-column: 2 / span 2;
+    // }
 
     footer {
-        grid-template-areas: ". main main main main social .";
+        grid-template-areas: ". main main social .";
     }
 
     .social-links {

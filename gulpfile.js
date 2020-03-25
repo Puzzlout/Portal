@@ -78,6 +78,7 @@ var lazypipe = require("lazypipe");
 var rename = require("gulp-rename"); //ok
 var header = require("gulp-header"); //ok
 var package = require("./package.json");
+var responsive = require("gulp-responsive");
 
 // Scripts
 var jshint = require("gulp-jshint");
