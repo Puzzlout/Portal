@@ -1,6 +1,6 @@
 /*===================================*/
-/* Colors */
 /* Theme 1 */
+/* Colors */
 $color-light: #fff;
 $color-dark: #000;
 $color-accent: #184DEC;
@@ -13,23 +13,19 @@ $bd-color: #343838;
 $btn-shadow-color-start: #194DEC;
 $btn-shadow-color-end: #8ec4f0;
 $hero-bg-color: rgba(52, 56, 56, 0.5);
-
+/* Font-size */
+$h1: 2rem;
+$h2: 1.6rem;
+$h2: 1.125rem;
+$p: 1rem;
+$fs-logo: 1.4rem;
+$fs-social-link: 2rem;
+$fs-fine-print: 0.625rem;
+/* Animations */
+$text-scale: 1;
+$text-scaled: 1.1;
+$text-scale-time: 250ms;
 /* End - Theme 1 */
-/* Theme 2 
-$color-light: #d9e1e8;
-$color-dark: #282c37;
-$color-accent: #2b90d9;
-$bg-color-light: $color-light;
-$bg-color-footer: #d9e1e8;
-$bg-color-dark: $color-dark;
-$bg-color-accent: $color-accent;
-$text-color: $color-dark;
-$bd-color: $color-dark;
-$btn-shadow-color-start: rgb(187, 172, 41);
-$btn-shadow-color-end: hsl(59, 100%, 49%);
-$hero-bg-color: rgba(40, 44, 55, 0.4);
-
-/* End - Theme 2 */
 
 .theme-color-light {
   color: $color-light;
@@ -77,14 +73,12 @@ h2 {
   margin: 0;
 }
 
-h1,
 .logo-accent,
 .logo-light {
-  font-size: 1.4rem;
+  font-size: $fs-logo;
 }
 
 h2 {
-  font-size: 1.125rem;
   margin-bottom: 0;
   text-align: left;
 }
@@ -137,7 +131,7 @@ a {
 .nav-link:hover,
 .nav-link:focus,
 .nav-link:active {
-  transform: scale(1.5);
+  transform: scale($text-scaled);
 }
 
 .current {
@@ -158,19 +152,10 @@ a {
 }
 
 .hero-title+p {
-  letter-spacing: 1;
+  letter-spacing: 2;
 }
 
 /* Skills */
-.skills-title {
-  font-size: 1.4rem;
-  text-align: center;
-}
-
-.skills-title::after {
-  margin: 0 auto;
-}
-
 .article-description {
   text-align: center;
 }
@@ -187,7 +172,7 @@ footer {
 
 .social-link {
   color: $color-dark;
-  font-size: 2em;
+  font-size: $fs-social-link;
   margin: 0 0.25em;
 }
 
@@ -200,7 +185,7 @@ footer {
 }
 
 .copyright {
-  font-size: 0.625rem;
+  font-size: $fs-fine-print;
 }
 
 @media (min-width: 600px) {
@@ -213,24 +198,27 @@ footer {
   .nav-link:hover,
   .nav-link:focus,
   .nav-link:active {
-    transform: scale(1.2);
+    transform: scale($text-scaled + .1);
   }
 }
 
 @media (min-width: 1400px) {
 
-  h1,
   .logo-accent,
   .logo-light {
-    font-size: 2rem;
+    font-size: $fs-logo * 1.25;
+  }
+
+  h1 {
+    font-size: $h1 * 1.25;
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: $h2 * 1.25;
   }
 
   p {
-    font-size: 1.125rem;
+    font-size: $p * 1.25;
   }
 }
 
@@ -242,8 +230,8 @@ footer {
 
 a,
 a i {
-  transform: scale(1);
-  transition: transform 500ms;
+  transform: scale($text-scale);
+  transition: transform $text-scale-time;
 }
 
 a:hover,
@@ -252,7 +240,7 @@ a:active,
 a i:hover,
 a i:focus,
 a i:active {
-  transform: scale(1.1);
+  transform: scale($text-scaled);
 }
 
 a:hover,
@@ -273,8 +261,8 @@ textarea {
   display: inline-block;
   border-radius: 2px;
   padding: 0.5em 1.75em;
-  transform: scale(1);
-  transition: transform 500ms;
+  transform: scale($text-scale);
+  transition: transform $text-scale-time;
   cursor: pointer;
   text-decoration: none;
   justify-self: start;
@@ -291,7 +279,7 @@ button:active,
 .btn:hover,
 .btn:focus,
 .btn:active {
-  transform: scale(1.1);
+  transform: scale($text-scaled);
 }
 
 button:hover,
@@ -311,5 +299,5 @@ textarea:focus {
 }
 
 /* End - Interactive elements */
-/*===================================*/
 /* End - Theme */
+/*===================================*/
