@@ -11,6 +11,7 @@ var settings = {
   copyFontAwesome: true,
   svgs: true,
   copy: true,
+  images: true,
   reload: true
 };
 
@@ -42,6 +43,10 @@ var paths = {
   svgs: {
     input: "src/svg/*.svg",
     output: "dist/svg/"
+  },
+  images: {
+    input: "src/copy/img/*.{jpg}",
+    output: "dist/img/"
   },
   copy: {
     input: "src/copy/**/*",
@@ -248,6 +253,18 @@ var copyFiles = function(done) {
   return src(paths.copy.input).pipe(dest(paths.copy.output));
 };
 
+// Generate responsive images
+var processImages = function(done) {
+  // Make sure this feature is activated before running
+  if (!settings.images) return done();
+
+  // Copy static files
+  console.log(paths.images.input);
+  return src(paths.images.input)
+    .pipe()
+    .pipe(dest(paths.images.output));
+};
+
 // Watch for changes to the src directory
 var startServer = function(done) {
   // Make sure this feature is activated before running
@@ -291,7 +308,7 @@ exports.default = series(
     buildStyles,
     buildSVGs,
     copyFontAwesome,
-    copyFiles
+    copyFiles //,    processImages
   )
 );
 
@@ -299,5 +316,4 @@ exports.default = series(
 // gulp watch
 exports.watch = series(exports.default, startServer, watchSource);
 
-//Wipe clean dist dir
-exports.clean = series(cleanDist);
+exports.images = series(cleanDist, copyFiles, processImages);
