@@ -29,7 +29,8 @@ var paths = {
   },
   styles: {
     input: "src/sass/**/*.{scss,sass}",
-    output: "dist/css/"
+    output: "dist/css/",
+    concat: "app.min.css"
   },
   fastyles: {
     input: "node_modules/@fortawesome/fontawesome-pro/css/**/*.min.css",
@@ -88,7 +89,7 @@ var responsive = require("gulp-responsive");
 // Scripts
 var jshint = require("gulp-jshint");
 var stylish = require("jshint-stylish");
-var concat = require("gulp-concat");
+var concat = require("gulp-concat-2020");
 var uglify = require("gulp-terser");
 var optimizejs = require("gulp-optimize-js");
 
@@ -217,6 +218,7 @@ var buildStyles = function(done) {
         })
       ])
     )
+    .pipe(concat(paths.styles.concat))
     .pipe(dest(paths.styles.output));
 };
 
