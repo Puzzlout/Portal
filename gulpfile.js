@@ -45,7 +45,7 @@ var paths = {
     output: "dist/svg/"
   },
   images: {
-    input: "src/copy/img/*.{jpg}",
+    input: "src/copy/img/hero.jpg",
     output: "dist/img/"
   },
   copy: {
@@ -261,7 +261,29 @@ var processImages = function(done) {
   // Copy static files
   console.log(paths.images.input);
   return src(paths.images.input)
-    .pipe()
+    .pipe(
+      responsive(
+        {
+          // Resize all JPG images to three different sizes: 200, 500, and 630 pixels
+          "*": [
+            { width: 300, rename: { suffix: "-300w" } },
+            { width: 600, rename: { suffix: "-600w" } },
+            { width: 1900, rename: { suffix: "-1900w" } },
+            {
+              // Compress, strip metadata, and rename original image //used for the index.html across all viewports // //used for the index.html across all viewports
+              rename: { suffix: "-800w" }
+            }
+          ]
+        },
+        {
+          // Global configuration for all images
+          // The output quality for JPEG, WebP and TIFF output formats
+          quality: 70,
+          progressive: true,
+          withMetadata: false
+        }
+      ) // Use progressive (interlace) scan for JPEG and PNG output // Strip all metadata
+    )
     .pipe(dest(paths.images.output));
 };
 
@@ -308,7 +330,8 @@ exports.default = series(
     buildStyles,
     buildSVGs,
     copyFontAwesome,
-    copyFiles //,    processImages
+    copyFiles,
+    processImages
   )
 );
 
@@ -316,4 +339,4 @@ exports.default = series(
 // gulp watch
 exports.watch = series(exports.default, startServer, watchSource);
 
-exports.images = series(cleanDist, copyFiles, processImages);
+exports.images = series(cleanDist, processImages);

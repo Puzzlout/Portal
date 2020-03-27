@@ -72,7 +72,11 @@ nav {
 
 /* Hero */
 .hero {
-    background-image: url(../img/hero.jpg);
+    background-image: url(../img/hero-1900w.jpg);
+    // background-image: image-set('../img/hero-300w.jpg'2x,
+    //         '../img/hero-600w.jpg'2x,
+    //         '../img/hero-1900w.jpg'1x,
+    //     );
     background-size: cover;
     background-position: bottom;
     padding: 8em 0 4em;
