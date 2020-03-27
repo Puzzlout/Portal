@@ -189,12 +189,23 @@ footer {
   font-size: $fs-fine-print;
 }
 
-@media (min-width: 600px) {
-
-  .hero-title,
-  .hero-title+p {
-    // padding: 2em;
+/* Breakpoint: 360px */
+@media (max-width: 360px) {
+  h1 {
+    font-size: $h1 * .825;
   }
+
+  h2 {
+    font-size: $h2 * .825;
+  }
+
+  p {
+    font-size: $p * .825;
+  }
+
+}
+
+@media (min-width: 600px) {
 
   .nav-link:hover,
   .nav-link:focus,
@@ -218,7 +229,8 @@ footer {
     font-size: $h2 * 1.25;
   }
 
-  p {
+  p,
+  .nav-link {
     font-size: $p * 1.25;
   }
 }
@@ -297,6 +309,13 @@ textarea:active,
 textarea:focus {
   outline: none;
   box-shadow: 0 0 0 1px $btn-shadow-color-start, 0 0 0 0.1rem $btn-shadow-color-end;
+}
+
+.nav-link:hover,
+.nav-link:active,
+.nav-link:focus {
+  border-radius: 2px;
+  padding: 0.25em 0.5em;
 }
 
 /* End - Interactive elements */

@@ -79,7 +79,7 @@ nav {
     //     );
     background-size: cover;
     background-position: bottom;
-    padding: 8em 0 4em;
+    padding: 6em 0 4em;
 }
 
 .hero>* {
@@ -120,6 +120,39 @@ footer {
 .social-links {
     grid-area: social;
     margin-bottom: 1em;
+}
+
+/* Breakpoint: 360px */
+@media (max-width: 359px) {
+    .hero {
+        background-image: url(../img/puzzle-1900w.jpg);
+        height: 100vh;
+        padding: 8em 0 4em;
+    }
+
+    .hero>* {
+        align-self: baseline;
+    }
+
+    .hero-title {
+        font-weight: normal;
+        margin-bottom: 1em;
+    }
+
+    .hero-description {
+        display: none;
+    }
+
+    .services-action {
+        align-self: end;
+    }
+}
+
+/* Breakpoint: 400px */
+@media (min-width: 400px) {
+    .hero {
+        padding: 8em 0 4em;
+    }
 }
 
 /* Breakpoint: 600px */
@@ -195,19 +228,23 @@ footer {
 }
 
 /* Breakpoint: 800px */
-@media (min-width: 800px) {
-    // .hero>* {
-    //     grid-column: 2 / span 4;
-    // }
+@media (min-width: 801px) {
+    .hero {
+        height: 100vh;
+        grid-template-rows: repeat(6, minmax(1em, 1fr));
+    }
 
-    // .skill {
-    //     grid-column: span 2;
-    // }
+    .hero>* {
+        align-self: baseline;
+    }
 
-    // .skill:first-child {
-    //     /*Skip for the first skill the first column */
-    //     grid-column: 2 / span 2;
-    // }
+    .hero-description {
+        grid-row: 3;
+    }
+
+    .hero-description+a {
+        grid-row: 5;
+    }
 
     footer {
         grid-template-areas: ". main main social .";
