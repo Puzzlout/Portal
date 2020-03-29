@@ -166,11 +166,6 @@ footer {
 
 @media (min-width: 600px) {
 
-    .header-home,
-    .header-home nav {
-        background-color: transparent;
-    }
-
     .toggle-nav,
     .close-nav {
         display: none;
@@ -229,29 +224,29 @@ footer {
 
 /* Breakpoint: 800px */
 @media (min-width: 801px) {
-    .hero {
-        height: 100vh;
-        grid-template-rows: repeat(6, minmax(1em, 1fr));
-    }
+    // .hero {
+    //     height: 100vh;
+    //     grid-template-rows: repeat(6, minmax(1em, 1fr));
+    // }
 
-    .hero>* {
-        align-self: baseline;
-    }
+    // .hero>* {
+    //     align-self: baseline;
+    // }
 
-    .hero-description {
-        grid-row: 3;
-    }
+    // .hero-description {
+    //     grid-row: 3;
+    // }
 
-    .hero-description+a {
-        grid-row: 5;
-    }
+    // .hero-description+a {
+    //     grid-row: 5;
+    // }
 
     footer {
         grid-template-areas: ". main main social .";
     }
 
     .social-links {
-        grid-column: span 2;
+        grid-column: -3;
     }
 }
 
@@ -259,6 +254,11 @@ footer {
 @media (min-width: 1400px) {
     .hero {
         padding: 12em 0 8em;
+    }
+
+    .skills,
+    footer {
+        padding: 8em 0;
     }
 }
 

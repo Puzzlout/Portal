@@ -7,6 +7,7 @@ $color-accent: #184DEC;
 $bg-color-light: $color-light;
 $bg-color-footer: #d9e1e8;
 $bg-color-dark: $color-dark;
+$bg-color-dark-alpha: #00000075;
 $bg-color-accent: $color-accent;
 $text-color: #343838;
 $bd-color: #343838;
@@ -14,10 +15,10 @@ $btn-shadow-color-start: #194DEC;
 $btn-shadow-color-end: #8ec4f0;
 $hero-bg-color: rgba(52, 56, 56, 0.5);
 /* Font-size */
-$h1: 2rem;
-$h2: 1.6rem;
-$h2: 1.125rem;
-$p: 1rem;
+$fs-h1: 2rem;
+$fs-h2: 1.6rem;
+$fs-h3: 1.125rem;
+$fs-p: 1rem;
 $fs-logo: 1.4rem;
 $fs-social-link: 2rem;
 $fs-fine-print: 0.825rem;
@@ -107,6 +108,8 @@ p {
 }
 
 /* Header */
+
+/* Navigation */
 nav {
   text-align: center;
 }
@@ -118,8 +121,8 @@ nav {
 }
 
 .nav-link {
-  margin-top: 2em;
   text-decoration: none;
+  font-size: $fs-p;
   font-weight: 700;
   line-height: 1em;
 }
@@ -154,7 +157,7 @@ a {
 
 .hero-title+p {
   letter-spacing: 2;
-  font-size: $p * 1.25;
+  font-size: $fs-p * 1.25;
 }
 
 /* Skills */
@@ -193,20 +196,25 @@ footer {
 /* Breakpoint: 360px */
 @media (max-width: 360px) {
   h1 {
-    font-size: $h1 * .825;
+    font-size: $fs-h1 * .825;
   }
 
   h2 {
-    font-size: $h2 * .825;
+    font-size: $fs-h2 * .825;
   }
 
-  p {
-    font-size: $p * .825;
+  p,
+  .nav-link {
+    font-size: $fs-p * .825;
   }
 
 }
 
 @media (min-width: 600px) {
+
+  header {
+    background-color: $bg-color-dark-alpha;
+  }
 
   .nav-link:hover,
   .nav-link:focus,
@@ -223,16 +231,16 @@ footer {
   }
 
   h1 {
-    font-size: $h1 * 1.25;
+    font-size: $fs-h1 * 1.25;
   }
 
   h2 {
-    font-size: $h2 * 1.25;
+    font-size: $fs-h2 * 1.25;
   }
 
   p,
   .nav-link {
-    font-size: $p * 1.25;
+    font-size: $fs-p * 1.25;
   }
 }
 
