@@ -108,16 +108,14 @@ p {
 }
 
 /* Header */
-
-/* Navigation */
-nav {
-  text-align: center;
+header {
+  background-color: $bg-color-dark-alpha;
 }
 
-.close-nav i:hover,
-.close-nav i:focus,
-.close-nav i:active {
-  color: $color-accent;
+/* Navigation */
+
+nav {
+  text-align: center;
 }
 
 .nav-link {
@@ -130,12 +128,6 @@ nav {
 .nav-link,
 a {
   text-transform: lowercase;
-}
-
-.nav-link:hover,
-.nav-link:focus,
-.nav-link:active {
-  transform: scale($text-scaled);
 }
 
 .current {
@@ -203,18 +195,31 @@ footer {
     font-size: $fs-h2 * .825;
   }
 
-  p,
-  .nav-link {
+  p {
     font-size: $fs-p * .825;
+  }
+
+  .nav-link {
+    font-size: $fs-p * 1.125;
+    margin: 1.5em 0;
+  }
+
+}
+
+/* Breakpoint: 600px */
+@media (max-width: 600px) {
+  .nav-list {
+    background-color: $bg-color-dark;
+  }
+
+  .nav-link {
+    font-size: $fs-p * 1.5;
+    margin: 1.5em 0;
   }
 
 }
 
 @media (min-width: 600px) {
-
-  header {
-    background-color: $bg-color-dark-alpha;
-  }
 
   .nav-link:hover,
   .nav-link:focus,
@@ -223,6 +228,7 @@ footer {
   }
 }
 
+/* Breakpoint: 1400px */
 @media (min-width: 1400px) {
 
   .logo-accent,
@@ -320,9 +326,16 @@ textarea:focus {
   box-shadow: 0 0 0 1px $btn-shadow-color-start, 0 0 0 0.1rem $btn-shadow-color-end;
 }
 
+.close-nav:hover,
+.close-nav:focus,
+.close-nav:active {
+  background-color: $bg-color-accent;
+}
+
 .nav-link:hover,
 .nav-link:active,
 .nav-link:focus {
+  transform: scale($text-scaled);
   border-radius: 2px;
   padding: 0.25em 0.5em;
 }

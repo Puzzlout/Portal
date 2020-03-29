@@ -56,7 +56,7 @@ nav {
 
 .close-nav {
     align-self: start;
-    padding: 1em;
+    padding: 1em 1em 0.75em;
     grid-column: 1 / span 1;
 }
 
@@ -162,6 +162,7 @@ footer {
     .hero-description {
         margin-right: 20%;
     }
+
 }
 
 @media (min-width: 600px) {
@@ -224,22 +225,6 @@ footer {
 
 /* Breakpoint: 800px */
 @media (min-width: 801px) {
-    // .hero {
-    //     height: 100vh;
-    //     grid-template-rows: repeat(6, minmax(1em, 1fr));
-    // }
-
-    // .hero>* {
-    //     align-self: baseline;
-    // }
-
-    // .hero-description {
-    //     grid-row: 3;
-    // }
-
-    // .hero-description+a {
-    //     grid-row: 5;
-    // }
 
     footer {
         grid-template-areas: ". main main social .";
