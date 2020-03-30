@@ -247,5 +247,38 @@ footer {
     }
 }
 
+/* Disable Mobile menu */
+nav {
+    position: initial;
+    left: initial;
+    top: initial;
+    right: initial;
+    bottom: initial;
+}
+
+.nav-list {
+    background-color: initial !important;
+    display: flex;
+}
+
+@media (min-width: 600px) {
+    .nav-list {
+        justify-content: flex-end;
+    }
+}
+
+.nav-link,
+.toggle-nav,
+.close-nav {
+    display: none;
+}
+
+.nav-link:last-child {
+    display: inline;
+    align-self: flex-end;
+    margin: initial;
+}
+
+/* End - Disable Mobile menu */
 /* End Layout */
 /*===================================*/
