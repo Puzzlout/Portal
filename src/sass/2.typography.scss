@@ -268,13 +268,17 @@ a i:active {
 }
 
 a:hover,
-a:focus {
+a:focus,
+.timify-button:hover,
+.timify-button:focus {
   color: $color-accent;
   background-color: $bg-color-light;
 }
 
-.btn {
+.btn,
+.timify-button {
   text-transform: uppercase;
+  margin-top: 1em;
 }
 
 button,
@@ -317,7 +321,9 @@ input:active,
 input:focus,
 textarea:hover,
 textarea:active,
-textarea:focus {
+textarea:focus,
+.timify-button:hover,
+.timify-button:focus {
   outline: none;
   box-shadow: 0 0 0 1px $btn-shadow-color-start, 0 0 0 0.1rem $btn-shadow-color-end;
 }
