@@ -52,7 +52,539 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
-        /*TODO: How to generate critical path css?*/
+        html {
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%
+        }
+
+        body {
+            margin: 0
+        }
+
+        main {
+            display: block
+        }
+
+        h1 {
+            font-size: 2em;
+            margin: .67em 0
+        }
+
+        a {
+            background-color: transparent
+        }
+
+        strong {
+            font-weight: bolder
+        }
+
+        ::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            font: inherit
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.6;
+            min-width: 300px
+        }
+
+        .timify-button,
+        a,
+        h1,
+        h2,
+        strong {
+            font-weight: 700
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: minmax(1em, 1fr) minmax(0, 800px) minmax(1em, 1fr)
+        }
+
+        @media (min-width:600px) {
+            .main-grid {
+                grid-template-columns: minmax(1em, 1fr) repeat(3, minmax(120px, 320px)) minmax(1em, 1fr);
+                -moz-column-gap: 2em;
+                column-gap: 2em
+            }
+        }
+
+        .theme-color-light {
+            color: #fff
+        }
+
+        .theme-color-dark {
+            color: #000
+        }
+
+        .theme-bg-light {
+            background-color: #fff
+        }
+
+        .theme-bg-accent {
+            background-color: #184dec
+        }
+
+        body {
+            color: #000;
+            font-family: Source Sans Pro, sans-serif
+        }
+
+        h1,
+        h2 {
+            margin: 0
+        }
+
+        .logo-accent,
+        .logo-light {
+            font-size: 1.4rem
+        }
+
+        h2 {
+            margin-bottom: 0;
+            text-align: left
+        }
+
+        h2:after {
+            content: "";
+            display: block;
+            width: 4rem;
+            height: 2px;
+            background-color: #184dec;
+            margin-top: .25em
+        }
+
+        .h2-title-underline-center {
+            text-align: center
+        }
+
+        .h2-title-underline-center:after {
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        p {
+            color: #343838;
+            text-align: left
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, .46)
+        }
+
+        nav {
+            text-align: center
+        }
+
+        .nav-link {
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1em
+        }
+
+        .hero-title,
+        .hero-title+p {
+            background-color: rgba(52, 56, 56, .5);
+            border-radius: 2px;
+            padding: .5em
+        }
+
+        .hero-title+p {
+            letter-spacing: 2;
+            font-size: 1.25rem
+        }
+
+        .article-description {
+            text-align: center
+        }
+
+        footer {
+            background-color: #d9e1e8;
+            text-align: center
+        }
+
+        .social-link {
+            color: #000;
+            font-size: 2rem;
+            margin: 0 .25em
+        }
+
+        .copyright {
+            font-size: .825rem
+        }
+
+        @media (max-width:360px) {
+            h1 {
+                font-size: 1.65rem
+            }
+
+            h2 {
+                font-size: 1.32rem
+            }
+
+            p {
+                font-size: .825rem
+            }
+
+            .nav-link {
+                font-size: 1.125rem;
+                margin: 1.5em 0
+            }
+        }
+
+        @media (max-width:600px) {
+            .nav-list {
+                background-color: #000
+            }
+
+            .nav-link {
+                font-size: 1.5rem;
+                margin: 1.5em 0
+            }
+        }
+
+        a {
+            transform: scale(1)
+        }
+
+        .btn,
+        .timify-button {
+            text-transform: uppercase;
+            margin-top: 1em
+        }
+
+        .btn {
+            border: 0;
+            display: inline-block;
+            border-radius: 2px;
+            padding: .5em 1.75em;
+            transform: scale(1);
+            text-decoration: none;
+            justify-self: start
+        }
+
+        header>* {
+            grid-column: 2/-2;
+            justify-items: start
+        }
+
+        .header-home {
+            position: absolute;
+            width: 100%
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .logo-accent {
+            height: 3em;
+            display: flex;
+            align-items: flex-end
+        }
+
+        .logo-accent a {
+            text-decoration: none;
+            text-transform: capitalize
+        }
+
+        nav {
+            position: fixed;
+            z-index: 9999;
+            width: 100%;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 1000%;
+            transform: translateX(0)
+        }
+
+        .nav-list {
+            flex-direction: column;
+            align-items: center
+        }
+
+        .toggle-nav {
+            justify-self: flex-end;
+            align-self: center
+        }
+
+        .close-nav {
+            align-self: start;
+            padding: 1em 1em .75em;
+            grid-column: 1/span 1
+        }
+
+        .hero {
+            background-image: url(../img/hero-1900w.jpg);
+            background-size: cover;
+            background-position: bottom;
+            padding: 6em 0 4em
+        }
+
+        .hero>* {
+            grid-column: 2/-2
+        }
+
+        .skills {
+            padding: 4em 0;
+            text-align: center
+        }
+
+        .skill {
+            grid-column: 2/-2;
+            margin-bottom: 2em
+        }
+
+        .skill:last-child {
+            margin-bottom: 0
+        }
+
+        footer {
+            grid-template-areas: ". social ."". main .";
+            padding: 2em 0;
+            text-align: center
+        }
+
+        .footer-main {
+            grid-area: main
+        }
+
+        .social-links {
+            grid-area: social;
+            margin-bottom: 1em
+        }
+
+        @media (max-width:359px) {
+            .hero {
+                background-image: url(../img/puzzle-1900w.jpg);
+                height: 100vh;
+                padding: 8em 0 4em
+            }
+
+            .hero>* {
+                align-self: baseline
+            }
+
+            .hero-title {
+                font-weight: 400;
+                margin-bottom: 1em
+            }
+
+            .hero-description {
+                display: none
+            }
+
+            .services-action {
+                align-self: end
+            }
+        }
+
+        @media (min-width:400px) {
+            .hero {
+                padding: 8em 0 4em
+            }
+        }
+
+        @media (max-width:600px) {
+
+            .hero-description,
+            .hero-title {
+                margin-right: 20%
+            }
+        }
+
+        @media (min-width:600px) {
+
+            .close-nav,
+            .toggle-nav {
+                display: none
+            }
+
+            .nav-list {
+                position: static;
+                top: auto;
+                bottom: auto;
+                right: auto;
+                left: auto;
+                flex-direction: row;
+                justify-content: flex-start
+            }
+
+            .nav-link {
+                margin-top: 0;
+                margin-left: 2em
+            }
+
+            .hero {
+                padding: 8em 0 4em;
+                background-position: 50%
+            }
+
+            .hero>* {
+                grid-column: 2/span 2
+            }
+
+            .skills {
+                padding: 6em 0
+            }
+
+            .skill {
+                grid-column: span 1
+            }
+
+            .skill:first-child {
+                grid-column: 2/span 1
+            }
+
+            footer {
+                grid-template-areas: ". main main social .";
+                padding: 6em 0
+            }
+
+            .footer-main {
+                text-align: left
+            }
+
+            .social-links {
+                justify-self: end
+            }
+        }
+
+        nav {
+            position: static;
+            left: auto;
+            top: auto;
+            right: auto;
+            bottom: auto
+        }
+
+        .nav-list {
+            background-color: initial !important;
+            display: flex
+        }
+
+        @media (min-width:600px) {
+            .nav-list {
+                justify-content: flex-end
+            }
+        }
+
+        .close-nav,
+        .nav-link,
+        .toggle-nav {
+            display: none
+        }
+
+        .nav-link:last-child {
+            display: inline;
+            align-self: flex-end;
+            margin: initial
+        }
+
+        .fab,
+        .fas {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1
+        }
+
+        .fa-2x {
+            font-size: 2em
+        }
+
+        .fa-bars:before {
+            content: "\f0c9"
+        }
+
+        .fa-facebook-square:before {
+            content: "\f082"
+        }
+
+        .fa-times-circle:before {
+            content: "\f057"
+        }
+
+        .fa-twitter:before {
+            content: "\f099"
+        }
+
+        @font-face {
+            font-family: "Font Awesome 5 Brands";
+            font-style: normal;
+            font-weight: 400;
+            font-display: auto;
+            src: url(../webfonts/fa-brands-400.eot);
+            src: url(../webfonts/fa-brands-400.eot?#iefix) format("embedded-opentype"), url(../webfonts/fa-brands-400.woff2) format("woff2"), url(../webfonts/fa-brands-400.woff) format("woff"), url(../webfonts/fa-brands-400.ttf) format("truetype"), url(../webfonts/fa-brands-400.svg#fontawesome) format("svg")
+        }
+
+        .fab {
+            font-family: "Font Awesome 5 Brands";
+            font-weight: 400
+        }
+
+        @font-face {
+            font-family: "Font Awesome 5 Pro";
+            font-style: normal;
+            font-weight: 300;
+            font-display: auto;
+            src: url(../webfonts/fa-light-300.eot);
+            src: url(../webfonts/fa-light-300.eot?#iefix) format("embedded-opentype"), url(../webfonts/fa-light-300.woff2) format("woff2"), url(../webfonts/fa-light-300.woff) format("woff"), url(../webfonts/fa-light-300.ttf) format("truetype"), url(../webfonts/fa-light-300.svg#fontawesome) format("svg")
+        }
+
+        @font-face {
+            font-family: "Font Awesome 5 Pro";
+            font-style: normal;
+            font-weight: 400;
+            font-display: auto;
+            src: url(../webfonts/fa-regular-400.eot);
+            src: url(../webfonts/fa-regular-400.eot?#iefix) format("embedded-opentype"), url(../webfonts/fa-regular-400.woff2) format("woff2"), url(../webfonts/fa-regular-400.woff) format("woff"), url(../webfonts/fa-regular-400.ttf) format("truetype"), url(../webfonts/fa-regular-400.svg#fontawesome) format("svg")
+        }
+
+        @font-face {
+            font-family: "Font Awesome 5 Pro";
+            font-style: normal;
+            font-weight: 900;
+            font-display: auto;
+            src: url(../webfonts/fa-solid-900.eot);
+            src: url(../webfonts/fa-solid-900.eot?#iefix) format("embedded-opentype"), url(../webfonts/fa-solid-900.woff2) format("woff2"), url(../webfonts/fa-solid-900.woff) format("woff"), url(../webfonts/fa-solid-900.ttf) format("truetype"), url(../webfonts/fa-solid-900.svg#fontawesome) format("svg")
+        }
+
+        .fas {
+            font-family: "Font Awesome 5 Pro";
+            font-weight: 900
+        }
+
+        @font-face {
+            font-family: 'Source Sans Pro';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v13/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7g.ttf) format('truetype')
+        }
+
+        @font-face {
+            font-family: 'Source Sans Pro';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v13/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdr.ttf) format('truetype')
+        }
     </style>
     <script async src="//book.timify.com/widget/widget.min.js" id="timify-widget" data-position="flexible"></script>
 </head>
