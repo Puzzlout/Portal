@@ -20,7 +20,7 @@ $fs-h2: 1.6rem;
 $fs-h3: 1.125rem;
 $fs-p: 1rem;
 $fs-logo: 1.4rem;
-$fs-social-link: 2rem;
+$fs-social-link: 1rem;
 $fs-fine-print: 0.825rem;
 /* Animations */
 $text-scale: 1;
@@ -165,7 +165,7 @@ footer {
 
 .social-link {
   color: $color-dark;
-  font-size: $fs-social-link;
+  font-size: 1rem; //$fs-social-link;
   margin: 0 0.25em;
 }
 
@@ -173,7 +173,7 @@ footer {
 .social-link:active,
 .social-link:focus {
   color: $color-accent;
-  border-radius: 10em;
+  border-radius: 2px;
   padding: 5px 10px;
 }
 

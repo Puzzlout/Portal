@@ -8,11 +8,10 @@ var settings = {
   scripts: true,
   polyfills: true,
   styles: true,
-  copyFontAwesome: true,
   svgs: true,
   copy: true,
   images: true,
-  reload: true
+  reload: true,
 };
 
 /**
@@ -25,35 +24,26 @@ var paths = {
   scripts: {
     input: "src/js/*",
     polyfills: ".polyfill.js",
-    output: "dist/js/"
+    output: "dist/js/",
   },
   styles: {
     input: "src/sass/**/*.{scss,sass}",
     output: "dist/css/",
-    concat: "app.min.css"
-  },
-  fastyles: {
-    input: "node_modules/@fortawesome/fontawesome-pro/css/**/*.min.css",
-    output: "dist/css/fontawesome/"
-  },
-  fawebfonts: {
-    input:
-      "node_modules/@fortawesome/fontawesome-pro/webfonts/**/*.{woff,woff2}",
-    output: "dist/css/webfonts/"
+    concat: "app.min.css",
   },
   svgs: {
     input: "src/svg/*.svg",
-    output: "dist/svg/"
+    output: "dist/svg/",
   },
   images: {
     input: ["src/copy/img/hero.jpg", "src/copy/img/puzzle.jpg"],
-    output: "dist/img/"
+    output: "dist/img/",
   },
   copy: {
     input: "src/copy/**/*",
-    output: "dist/"
+    output: "dist/",
   },
-  reload: "./dist/"
+  reload: "./dist/",
 };
 
 /**
@@ -69,7 +59,7 @@ var banner = {
     " <%= package.author.name %>" +
     " | <%= package.license %> License" +
     " | <%= package.repository.url %>" +
-    " */\n"
+    " */\n",
 };
 
 /**
@@ -110,7 +100,7 @@ var browserSync = require("browser-sync"); //ok
  */
 
 // Remove pre-existing content from output folders
-var cleanDist = function(done) {
+var cleanDist = function (done) {
   // Make sure this feature is activated before running
   if (!settings.clean) return done();
 
@@ -133,13 +123,13 @@ var jsTasks = lazypipe()
   .pipe(dest, paths.scripts.output);
 
 // Lint, minify, and concatenate scripts
-var buildScripts = function(done) {
+var buildScripts = function (done) {
   // Make sure this feature is activated before running
   if (!settings.scripts) return done();
 
   // Run tasks on script files
   return src(paths.scripts.input).pipe(
-    flatmap(function(stream, file) {
+    flatmap(function (stream, file) {
       // If the file is a directory
       if (file.isDirectory()) {
         // Setup a suffix variable
@@ -153,7 +143,7 @@ var buildScripts = function(done) {
           // Grab files that aren't polyfills, concatenate them, and process them
           src([
             file.path + "/*.js",
-            "!" + file.path + "/*" + paths.scripts.polyfills
+            "!" + file.path + "/*" + paths.scripts.polyfills,
           ])
             .pipe(concat(file.relative + ".js"))
             .pipe(jsTasks());
@@ -175,7 +165,7 @@ var buildScripts = function(done) {
 };
 
 // Lint scripts
-var lintScripts = function(done) {
+var lintScripts = function (done) {
   // Make sure this feature is activated before running
   if (!settings.scripts) return done();
 
@@ -186,7 +176,7 @@ var lintScripts = function(done) {
 };
 
 // Process, lint, and minify Sass files
-var buildStyles = function(done) {
+var buildStyles = function (done) {
   // Make sure this feature is activated before running
   if (!settings.styles) return done();
 
@@ -195,15 +185,15 @@ var buildStyles = function(done) {
     .pipe(
       sass({
         outputStyle: "expanded",
-        sourceComments: true
+        sourceComments: true,
       })
     )
     .pipe(
       postcss([
         prefix({
           cascade: true,
-          remove: true
-        })
+          remove: true,
+        }),
       ])
     )
     .pipe(header(banner.main, { package: package }))
@@ -213,41 +203,26 @@ var buildStyles = function(done) {
       postcss([
         minify({
           discardComments: {
-            removeAll: true
-          }
-        })
+            removeAll: true,
+          },
+        }),
       ])
     )
     .pipe(concat(paths.styles.concat))
     .pipe(dest(paths.styles.output));
 };
 
-// Process Font Awesome files
-var copyFontAwesome = function(done) {
-  // Make sure this feature is activated before running
-  if (!settings.copyFontAwesome) return done();
-
-  // Run task
-  const copyCss = src(paths.fastyles.input).pipe(dest(paths.fastyles.output));
-  const copyWebFonts = src(paths.fawebfonts.input).pipe(
-    dest(paths.fawebfonts.output)
-  );
-  return copyCss && copyWebFonts;
-};
-
 // Optimize SVG files
-var buildSVGs = function(done) {
+var buildSVGs = function (done) {
   // Make sure this feature is activated before running
   if (!settings.svgs) return done();
 
   // Optimize SVG files
-  return src(paths.svgs.input)
-    .pipe(svgmin())
-    .pipe(dest(paths.svgs.output));
+  return src(paths.svgs.input).pipe(svgmin()).pipe(dest(paths.svgs.output));
 };
 
 // Copy static files into output folder
-var copyFiles = function(done) {
+var copyFiles = function (done) {
   // Make sure this feature is activated before running
   if (!settings.copy) return done();
 
@@ -256,7 +231,7 @@ var copyFiles = function(done) {
 };
 
 // Generate responsive images
-var processImages = function(done) {
+var processImages = function (done) {
   // Make sure this feature is activated before running
   if (!settings.images) return done();
 
@@ -273,16 +248,16 @@ var processImages = function(done) {
             { width: 1900, rename: { suffix: "-1900w" } },
             {
               // Compress, strip metadata, and rename original image //used for the index.html across all viewports // //used for the index.html across all viewports
-              rename: { suffix: "-800w" }
-            }
-          ]
+              rename: { suffix: "-800w" },
+            },
+          ],
         },
         {
           // Global configuration for all images
           // The output quality for JPEG, WebP and TIFF output formats
           quality: 70,
           progressive: true,
-          withMetadata: false
+          withMetadata: false,
         }
       ) // Use progressive (interlace) scan for JPEG and PNG output // Strip all metadata
     )
@@ -290,15 +265,15 @@ var processImages = function(done) {
 };
 
 // Watch for changes to the src directory
-var startServer = function(done) {
+var startServer = function (done) {
   // Make sure this feature is activated before running
   if (!settings.reload) return done();
 
   // Initialize BrowserSync
   browserSync.init({
     server: {
-      baseDir: paths.reload
-    }
+      baseDir: paths.reload,
+    },
   });
 
   // Signal completion
@@ -306,14 +281,14 @@ var startServer = function(done) {
 };
 
 // Reload the browser when files change
-var reloadBrowser = function(done) {
+var reloadBrowser = function (done) {
   if (!settings.reload) return done();
   browserSync.reload();
   done();
 };
 
 // Watch for changes
-var watchSource = function(done) {
+var watchSource = function (done) {
   watch(paths.input, series(exports.default, reloadBrowser));
   done();
 };
@@ -331,7 +306,6 @@ exports.default = series(
     lintScripts,
     buildStyles,
     buildSVGs,
-    copyFontAwesome,
     copyFiles,
     processImages
   )
