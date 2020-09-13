@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/Puzzlout/Portal#readme",
   "dependencies": {
-    "@fortawesome/fontawesome-pro": "^5.12.1",
     "@puzzlout/static-website-boilerplate-gulp": "^1.0.0"
   },
   "devDependencies": {
