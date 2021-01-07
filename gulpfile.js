@@ -19,31 +19,31 @@ var settings = {
  */
 
 var paths = {
-  input: "src/",
-  output: "dist/",
+  input: 'src/',
+  output: 'dist/',
   scripts: {
-    input: "src/js/*",
-    polyfills: ".polyfill.js",
-    output: "dist/js/",
+    input: 'src/js/*',
+    polyfills: '.polyfill.js',
+    output: 'dist/js/',
   },
   styles: {
-    input: "src/sass/**/*.{scss,sass}",
-    output: "dist/css/",
-    concat: "app.min.css",
+    input: 'src/sass/**/*.{scss,sass}',
+    output: 'dist/css/',
+    concat: 'app.min.css',
   },
   svgs: {
-    input: "src/svg/*.svg",
-    output: "dist/svg/",
+    input: 'src/svg/*.svg',
+    output: 'dist/svg/',
   },
   images: {
-    input: ["src/copy/img/hero.jpg", "src/copy/img/puzzle.jpg"],
-    output: "dist/img/",
+    input: ['src/copy/img/hero.jpg'],
+    output: 'dist/img/',
   },
   copy: {
-    input: "src/copy/**/*",
-    output: "dist/",
+    input: 'src/copy/**/*',
+    output: 'dist/',
   },
-  reload: "./dist/",
+  reload: './dist/',
 };
 
 /**
@@ -52,14 +52,14 @@ var paths = {
 
 var banner = {
   main:
-    "/*!" +
-    " <%= package.name %> v<%= package.version %>" +
-    " | (c) " +
+    '/*!' +
+    ' <%= package.name %> v<%= package.version %>' +
+    ' | (c) ' +
     new Date().getFullYear() +
-    " <%= package.author.name %>" +
-    " | <%= package.license %> License" +
-    " | <%= package.repository.url %>" +
-    " */\n",
+    ' <%= package.author.name %>' +
+    ' | <%= package.license %> License' +
+    ' | <%= package.repository.url %>' +
+    ' */\n',
 };
 
 /**
@@ -67,33 +67,33 @@ var banner = {
  */
 
 // General
-var { gulp, src, dest, watch, series, parallel } = require("gulp");
-var del = require("del"); //ok
-var flatmap = require("gulp-flatmap");
-var lazypipe = require("lazypipe");
-var rename = require("gulp-rename"); //ok
-var header = require("gulp-header"); //ok
-var package = require("./package.json");
-var responsive = require("gulp-responsive");
+var { gulp, src, dest, watch, series, parallel } = require('gulp');
+var del = require('del'); //ok
+var flatmap = require('gulp-flatmap');
+var lazypipe = require('lazypipe');
+var rename = require('gulp-rename'); //ok
+var header = require('gulp-header'); //ok
+var package = require('./package.json');
+var responsive = require('gulp-responsive');
 
 // Scripts
-var jshint = require("gulp-jshint");
-var stylish = require("jshint-stylish");
-var concat = require("gulp-concat-2020");
-var uglify = require("gulp-terser");
-var optimizejs = require("gulp-optimize-js");
+var jshint = require('gulp-jshint');
+var stylish = require('jshint-stylish');
+var concat = require('gulp-concat-2020');
+var uglify = require('gulp-terser');
+var optimizejs = require('gulp-optimize-js');
 
 // Styles
-var sass = require("gulp-sass");
-var postcss = require("gulp-postcss");
-var prefix = require("autoprefixer");
-var minify = require("cssnano");
+var sass = require('gulp-sass');
+var postcss = require('gulp-postcss');
+var prefix = require('autoprefixer');
+var minify = require('cssnano');
 
 // SVGs
-var svgmin = require("gulp-svgmin");
+var svgmin = require('gulp-svgmin');
 
 // BrowserSync
-var browserSync = require("browser-sync"); //ok
+var browserSync = require('browser-sync'); //ok
 
 /**
  * Gulp Tasks
@@ -116,7 +116,7 @@ var jsTasks = lazypipe()
   .pipe(header, banner.main, { package: package })
   .pipe(optimizejs)
   .pipe(dest, paths.scripts.output)
-  .pipe(rename, { suffix: ".min" })
+  .pipe(rename, { suffix: '.min' })
   .pipe(uglify)
   .pipe(optimizejs)
   .pipe(header, banner.main, { package: package })
@@ -133,26 +133,26 @@ var buildScripts = function (done) {
       // If the file is a directory
       if (file.isDirectory()) {
         // Setup a suffix variable
-        var suffix = "";
+        var suffix = '';
 
         // If separate polyfill files enabled
         if (settings.polyfills) {
           // Update the suffix
-          suffix = ".polyfills";
+          suffix = '.polyfills';
 
           // Grab files that aren't polyfills, concatenate them, and process them
           src([
-            file.path + "/*.js",
-            "!" + file.path + "/*" + paths.scripts.polyfills,
+            file.path + '/*.js',
+            '!' + file.path + '/*' + paths.scripts.polyfills,
           ])
-            .pipe(concat(file.relative + ".js"))
+            .pipe(concat(file.relative + '.js'))
             .pipe(jsTasks());
         }
 
         // Grab all files and concatenate them
         // If separate polyfills enabled, this will have .polyfills in the filename
-        src(file.path + "/*.js")
-          .pipe(concat(file.relative + suffix + ".js"))
+        src(file.path + '/*.js')
+          .pipe(concat(file.relative + suffix + '.js'))
           .pipe(jsTasks());
 
         return stream;
@@ -160,7 +160,7 @@ var buildScripts = function (done) {
 
       // Otherwise, process the file
       return stream.pipe(jsTasks());
-    })
+    }),
   );
 };
 
@@ -172,7 +172,7 @@ var lintScripts = function (done) {
   // Lint scripts
   return src(paths.scripts.input)
     .pipe(jshint())
-    .pipe(jshint.reporter("jshint-stylish"));
+    .pipe(jshint.reporter('jshint-stylish'));
 };
 
 // Process, lint, and minify Sass files
@@ -184,9 +184,9 @@ var buildStyles = function (done) {
   return src(paths.styles.input)
     .pipe(
       sass({
-        outputStyle: "expanded",
+        outputStyle: 'expanded',
         sourceComments: true,
-      })
+      }),
     )
     .pipe(
       postcss([
@@ -194,11 +194,11 @@ var buildStyles = function (done) {
           cascade: true,
           remove: true,
         }),
-      ])
+      ]),
     )
     .pipe(header(banner.main, { package: package }))
     .pipe(dest(paths.styles.output))
-    .pipe(rename({ suffix: ".min" }))
+    .pipe(rename({ suffix: '.min' }))
     .pipe(
       postcss([
         minify({
@@ -206,7 +206,7 @@ var buildStyles = function (done) {
             removeAll: true,
           },
         }),
-      ])
+      ]),
     )
     .pipe(concat(paths.styles.concat))
     .pipe(dest(paths.styles.output));
@@ -242,13 +242,13 @@ var processImages = function (done) {
       responsive(
         {
           // Resize all JPG images to three different sizes: 200, 500, and 630 pixels
-          "*": [
-            { width: 300, rename: { suffix: "-300w" } },
-            { width: 600, rename: { suffix: "-600w" } },
-            { width: 1900, rename: { suffix: "-1900w" } },
+          '*': [
+            { width: 300, rename: { suffix: '-300w' } },
+            { width: 600, rename: { suffix: '-600w' } },
+            { width: 1900, rename: { suffix: '-1900w' } },
             {
               // Compress, strip metadata, and rename original image //used for the index.html across all viewports // //used for the index.html across all viewports
-              rename: { suffix: "-800w" },
+              rename: { suffix: '-800w' },
             },
           ],
         },
@@ -258,8 +258,8 @@ var processImages = function (done) {
           quality: 70,
           progressive: true,
           withMetadata: false,
-        }
-      ) // Use progressive (interlace) scan for JPEG and PNG output // Strip all metadata
+        },
+      ), // Use progressive (interlace) scan for JPEG and PNG output // Strip all metadata
     )
     .pipe(dest(paths.images.output));
 };
@@ -307,8 +307,8 @@ exports.default = series(
     buildStyles,
     buildSVGs,
     copyFiles,
-    processImages
-  )
+    processImages,
+  ),
 );
 
 // Watch and reload
