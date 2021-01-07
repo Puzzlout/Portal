@@ -3,7 +3,7 @@
 /* Colors */
 $color-light: #fff;
 $color-dark: #000;
-$color-accent: #184DEC;
+$color-accent: #184dec;
 $bg-color-light: $color-light;
 $bg-color-footer: #d9e1e8;
 $bg-color-dark: $color-dark;
@@ -11,7 +11,7 @@ $bg-color-dark-alpha: #00000075;
 $bg-color-accent: $color-accent;
 $text-color: #343838;
 $bd-color: #343838;
-$btn-shadow-color-start: #194DEC;
+$btn-shadow-color-start: #194dec;
 $btn-shadow-color-end: #8ec4f0;
 $hero-bg-color: rgba(52, 56, 56, 0.5);
 /* Font-size */
@@ -62,7 +62,7 @@ $text-scale-time: 250ms;
 
 body {
   color: $color-dark;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*===================================*/
@@ -85,7 +85,7 @@ h2 {
 }
 
 h2::after {
-  content: "";
+  content: '';
   display: block;
   width: 4rem;
   height: 2px;
@@ -137,13 +137,13 @@ nav {
 
 /* Hero */
 .hero-title,
-.hero-title+p {
+.hero-title + p {
   background-color: $hero-bg-color;
   border-radius: 2px;
   padding: 0.5em;
 }
 
-.hero-title+p {
+.hero-title + p {
   letter-spacing: 2;
   font-size: $fs-p * 1.25;
 }
@@ -163,6 +163,9 @@ footer {
   text-align: center;
 }
 
+.footer-main a {
+  line-height: 2.5;
+}
 .social-link {
   color: $color-dark;
   font-size: 1rem; //$fs-social-link;
@@ -177,29 +180,29 @@ footer {
   padding: 5px 10px;
 }
 
-.copyright, .affiliate-terms {
+.copyright,
+.affiliate-terms {
   font-size: $fs-fine-print;
 }
 
 /* Breakpoint: 360px */
 @media (max-width: 360px) {
   h1 {
-    font-size: $fs-h1 * .825;
+    font-size: $fs-h1 * 0.825;
   }
 
   h2 {
-    font-size: $fs-h2 * .825;
+    font-size: $fs-h2 * 0.825;
   }
 
   p {
-    font-size: $fs-p * .825;
+    font-size: $fs-p * 0.825;
   }
 
   .nav-link {
     font-size: $fs-p * 1.125;
     margin: 1.5em 0;
   }
-
 }
 
 /* Breakpoint: 600px */
@@ -212,21 +215,18 @@ footer {
     font-size: $fs-p * 1.5;
     margin: 1.5em 0;
   }
-
 }
 
 @media (min-width: 600px) {
-
   .nav-link:hover,
   .nav-link:focus,
   .nav-link:active {
-    transform: scale($text-scaled + .1);
+    transform: scale($text-scaled + 0.1);
   }
 }
 
 /* Breakpoint: 1400px */
 @media (min-width: 1400px) {
-
   .logo-accent,
   .logo-light {
     font-size: $fs-logo * 1.25;
@@ -325,7 +325,8 @@ textarea:focus,
 .timify-button:hover,
 .timify-button:focus {
   outline: none;
-  box-shadow: 0 0 0 1px $btn-shadow-color-start, 0 0 0 0.1rem $btn-shadow-color-end;
+  box-shadow: 0 0 0 1px $btn-shadow-color-start,
+    0 0 0 0.1rem $btn-shadow-color-end;
 }
 
 .close-nav:hover,
