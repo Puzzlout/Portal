@@ -103,6 +103,18 @@ nav {
     margin-bottom: 0;
 }
 
+/* Affiliates */
+
+.promo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 6em;
+}
+.affiliate {
+    width: 30%;
+}
+.affiliate:hover { background-color: transparent; }
 /* Footer */
 
 footer {
