@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="author" content="Jeremie Litzler">
+
+    <title>Puzzlout - Trouvons des solutions à vos besoins avec le Web</title>
+    <meta name="description" content="Nous offrons une grande variété de services. Contactez-nous !">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:description" content="Nous offrons une grande variété de services. Contactez-nous !">
+    <meta property="og:url" content="index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://puzzlout.com/img/app-icons/favicon-32x32.png">
+    <meta property="og:image:alt" content="Puzzlout - Créations web">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@puzzlout">
+    <meta name="twitter:creator" content="@LitzlerJeremie">
+    <meta name="twitter:description" content="Nous offrons une grande variété de services. Contactez-nous !">
+    <meta name="twitter:image" content="https://gulp-boilerplate.puzzlout.com/img/android-chrome-192x192.png">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/app-icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/app-icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/app-icons/favicon-16x16.png">
+    <link rel="manifest" href="/site.manifest">
+    <meta name="theme-color" content="#184DEC" />
+    <link rel="mask-icon" href="/img/app-icons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#3366ff">
+
+    <!--<link href="./css/normalize.min.css" rel="stylesheet">
+    <link href="./css/base.min.css" rel="stylesheet">
+    <link href="./css/navigation.min.css" rel="stylesheet">
+    <link href="./css/typography.min.css" rel="stylesheet">
+    <link href="./css/layout.min.css" rel="stylesheet">-->
+    <link href="./css/app.min.css" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap" rel="stylesheet" type="text/css" as="style" onload="this.rel='stylesheet'">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- prettier-ignore -->
+    <style>html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}a{background-color:transparent}strong{font-weight:bolder}img{border-style:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}*{box-sizing:border-box}body{margin:0;padding:0;font-size:1rem;font-weight:400;line-height:1.6;min-width:300px}img{width:100%;max-width:100%;display:block}.timify-button,a,h1,h2,strong{font-weight:700}.main-grid{display:grid;grid-template-columns:minmax(1em,1fr) minmax(0,800px) minmax(1em,1fr)}@media (min-width:600px){.main-grid{grid-template-columns:minmax(1em,1fr) repeat(3,minmax(120px,320px)) minmax(1em,1fr);-moz-column-gap:2em;column-gap:2em}}.theme-color-light{color:#fff}.theme-color-dark{color:#000}.theme-bg-light{background-color:#fff}.theme-bg-accent{background-color:#184dec}body{color:#000;font-family:Source Sans Pro,sans-serif}h1,h2{margin:0}.logo-accent,.logo-light{font-size:1.4rem}h2{margin-bottom:0;text-align:left}h2:after{content:"";display:block;width:4rem;height:2px;background-color:#184dec;margin-top:.25em}.h2-title-underline-center{text-align:center}.h2-title-underline-center:after{margin-left:auto;margin-right:auto}p{color:#343838;text-align:left}header{background-color:rgba(0,0,0,.46)}nav{text-align:center}.nav-link{text-decoration:none;font-size:1rem;font-weight:700;line-height:1em}.hero-title,.hero-title+p{background-color:rgba(52,56,56,.5);border-radius:2px;padding:.5em}.hero-title+p{letter-spacing:2;font-size:1.25rem}.article-description{text-align:center}footer{background-color:#d9e1e8;text-align:center}.footer-main a{line-height:2.5}.social-link{color:#000;font-size:1rem;margin:1rem .25em}.affiliate-terms,.copyright{font-size:.825rem}@media (max-width:360px){h1{font-size:1.65rem}h2{font-size:1.32rem}p{font-size:.825rem}.nav-link{font-size:1.125rem;margin:1.5em 0}}@media (max-width:600px){.nav-list{background-color:#000}.nav-link{font-size:1.5rem;margin:1.5em 0}}a{transform:scale(1)}.btn,.timify-button{text-transform:uppercase;margin-top:1em}.btn{border:0;display:inline-block;border-radius:2px;padding:.5em 1.75em;transform:scale(1);text-decoration:none;justify-self:start}header>*{grid-column:2/-2;justify-items:start}.header-home{position:absolute;width:100%}.header-content{display:flex;justify-content:space-between;align-items:center}.logo-accent{height:3em;display:flex;align-items:flex-end}.logo-accent a{text-decoration:none;text-transform:capitalize}nav{position:fixed;z-index:9999;width:100%;top:0;bottom:0;right:0;left:1000%;transform:translateX(0)}.nav-list{flex-direction:column;align-items:center}.toggle-nav{justify-self:flex-end;align-self:center}.close-nav{align-self:start;padding:1em 1em .75em;grid-column:1/span 1}.hero{background-image:url(../img/hero-1900w.jpg);background-size:cover;background-position:bottom;padding:6em 0 4em}.hero>*{grid-column:2/-2}.skills{padding:4em 0;text-align:center}.skill{grid-column:2/-2;margin-bottom:2em}.skill:last-child{margin-bottom:0}.promo{display:flex;justify-content:space-around;align-items:center;padding-bottom:6em}.affiliate{width:30%}footer{grid-template-areas:". social ." ". main .";padding:2em 0;text-align:center}.footer-main{grid-area:main}.social-links{grid-area:social;margin-bottom:1em}.social-link{display:block}@media (max-width:359px){.hero{background-image:url(../img/puzzle-1900w.jpg);height:100vh;padding:8em 0 4em}.hero>*{align-self:baseline}.hero-title{font-weight:400;margin-bottom:1em}.hero-description{display:none}.services-action{align-self:end}}@media (min-width:400px){.hero{padding:8em 0 4em}}@media (max-width:600px){.hero-description,.hero-title{margin-right:20%}}@media (min-width:600px){.close-nav,.toggle-nav{display:none}.nav-list{position:static;top:auto;bottom:auto;right:auto;left:auto;flex-direction:row;justify-content:flex-start}.nav-link{margin-top:0;margin-left:2em}.hero{padding:8em 0 4em;background-position:50%}.hero>*{grid-column:2/span 2}.skills{padding:6em 0}.skill{grid-column:span 1}.skill:first-child{grid-column:2/span 1}footer{grid-template-areas:". main main social .";padding:6em 0}.footer-main{text-align:left}.social-links{justify-self:end}}nav{position:static;left:auto;top:auto;right:auto;bottom:auto}.nav-list{background-color:initial!important;display:flex}@media (min-width:600px){.nav-list{justify-content:flex-end}}.close-nav,.nav-link,.toggle-nav{display:none}.nav-link:last-child{display:inline;align-self:flex-end;margin:initial}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7g.ttf) format('truetype')}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdr.ttf) format('truetype')}</style>
+    <script async src="//book.timify.com/widget/widget.min.js" id="timify-widget" data-position="flexible"></script>
+</head>
+
+<body>
+    <header class="header-home main-grid">
+        <div class="header-content">
+            <div class="logo logo-accent theme-bg-accent">
+                <a href="index.html" class="theme-color-light" title="Return home">
+                    <strong>Puzzlout</strong>
+                </a>
+            </div>
+            <nav class="nav-list">
+                <a href="#" class="close-nav" title="Close navigation" aria-label="Fermer le menu">
+                    <em class="fas fa-2x fa-times-circle theme-color-light"></em>
+                </a>
+                <a class="nav-link theme-color-light" href="#services" title="About me">Prestations</a>
+                <a class="nav-link theme-color-light" href="mailto:puzzlout@gmail.com?subject=[Puzzlout][Portal] J'ai besoin de vous" target="_blank">Contactez-nous</a>
+            </nav>
+            <a href="#" class="toggle-nav theme-color-light" tabindex="0">
+                <em class="fas fa-2x fa-bars" title="Close menu" aria-label="Open menu"></em>
+                <!-- <em class="fas fa-2x fa-bars">Menu</em> -->
+            </a>
+        </div>
+    </header>
+    <main>
+        <section class="hero main-grid">
+            <h1 class="hero-title theme-color-light"><strong>Notre mission</strong>: Trouver <strong>une solution à vos besoins</strong> avec le Web.</h1>
+            <p class="hero-description theme-color-light">Nous sommes <strong>des passionés </strong> à travers le monde créant des produits dédiés pour nos clients. <br />Nous pouvons <strong>vous aider</strong>.</p>
+            <a class="services-action btn theme-bg-accent theme-color-light" href="#services" title="Voir nos services">En savoir plus</a>
+            <div class="services-action btn theme-bg-accent theme-color-light timify-button" data-account-id="5efc92bbe71d1b1310d943d9">Prendre rendez-vous en ligne</div>
+        </section>
+        <section id="services" class="skills main-grid theme-bg-light theme-color-dark">
+            <article class="skill">
+                <h2 class="h2-title-underline-center">Serveur virtuel privé infogéré</h2>
+                <p class="article-description">Vous cherchez un <strong> serveur ou un hébergement </strong> à petit prix ?</p>
+                <a class="btn theme-bg-accent theme-color-light" href="https://drive.google.com/file/d/1LhRlg4FDYSRa1s_9Gnc5f2bBBDoIWE9E/view?usp=sharing" target="_blank" rel="noreferrer">Consulter les tarifs</a>
+                <a class="btn theme-bg-accent theme-color-light" href="mailto:puzzlout@gmail.com?subject=[Puzzlout][Portal] Demande de tarifs d'hébergement">Recevoir un tarif personnalisé</a>
+            </article>
+            <article class="skill">
+                <h2 class="h2-title-underline-center">Site web WordPress</h2>
+                <p class="article-description">Vous avez besoin d'un site web ? Vous êtes au bon endroit ! Nous vous aiderons à le créer simplement. <strong>Complètement personnalisable grâce à <a href="https://www.infomaniak.com/goto/fr/my-easy-site?utm_term=5ff70313bf816" target="_blank" rel="noreferrer">Infomaniak</a> et <a href="https://www.elegantthemes.com/gallery/divi/" target="_blank" rel="noreferrer">Elegant Themes</a>.</strong> </p>
+                <a class="btn theme-bg-accent theme-color-light" href="https://drive.google.com/file/d/1LhRlg4FDYSRa1s_9Gnc5f2bBBDoIWE9E/view?usp=sharing" target="_blank" rel="noreferrer">Consulter les tarifs</a>
+                <a class="btn theme-bg-accent theme-color-light" href="mailto:puzzlout@gmail.com?subject=[Puzzlout][Portal] Demande de création de site web">Créer un site web</a>
+            </article>
+            <!-- <article class="skill">
+                <h2 class="h2-title-underline-center">Web Apps</h2>
+                <p class="article-description">You want more than a regular website? You want to manage your business? It is surely possible with a <strong>Web App</strong>.</p>
+                <a class="btn theme-bg-accent theme-color-light" href="mailto:puzzlout@gmail.com?subject=[Puzzlout][Portal] I need a Web App" title="Yes, I need a managed server">I need a Web application</a>
+            </article> -->
+            <article class="skill">
+                <h2 class="h2-title-underline-center">Formation aux technologies du Web</h2>
+                <p class="article-description">Les technologies web sont du chinois pour vous ? Vous avez besoin de conseils ?<strong> Nous pouvons vous guider dans vos choix</strong>.</p>
+                <a class="btn theme-bg-accent theme-color-light" href="mailto:puzzlout@gmail.com?subject=[Puzzlout][Portal] Demande de conseils sur les technologies web">Demander conseil</a>
+            </article>
+        </section>
+        <section class="promo theme-bg-light theme-color-dark">
+            <a class="affiliate" href="https://www.infomaniak.com/goto/fr/my-easy-site?utm_term=5ff70313bf816" rel="noreferrer">
+                <img src="https://storage-master.infomaniak.ch/promotional/banners/medium_rectanglewordpress_fr.jpg" alt="Créer un site WordPress avec Infomaniak (copyright @ Infomaniak)">
+            </a>
+            <!--<a class="affiliate" href="https://www.infomaniak.com/goto/fr/my-easy-site?utm_term=5ff70313bf816" target="_blank">
+                <img src="img/infomaniak.jpg" alt="Créer un site WordPress avec Infomaniak (copyright @ Infomaniak)" />
+            </a>-->
+            <a class="affiliate" href="https://www.elegantthemes.com/gallery/divi/" target="_blank" rel="noreferrer">
+                <img src="img/divi.jpg" alt="Créer un site WordPress avec le thème Divi et le Page Builder d'Elegant Themes(copyright @ ElegantThemes)" />
+            </a>
+        </section>
+    </main>
+    <footer class="main-grid theme-color-dark">
+        <div class="footer-main">
+            <div class="logo logo-footer logo-light">
+                <strong>Puzzlout</strong>
+            </div>
+            <p class="footer-desciption">Un groupe d'individus amoureux de ce que le Web a à offrir et cherchant toujours à aider autrui pour résoudre les problèmes de tous les jours.</p>
+            <a href="https://drive.google.com/drive/folders/1h_gi30258BIi91tDkFzaKM-_OD7CPZWz" target="_blank" rel="noreferrer">Conditions générales de ventes</a><br>
+            <a href="mentions.html">Mentions légales</a><br>
+            <a href="https://www.puzzlout.com/">Version anglaise</a>
+            <p class="copyright">Puzzlout &copy; 2020</p>
+            <p class="affiliate-terms">Certains des liens sont des «liens d'affiliation». Cela signifie que si vous cliquez sur le lien et que vous achetez un produit chez le fournisseur, je recevrai une commission d'affiliation.</p>
+
+        </div>
+        <div class="social-links">
+            <a class="social-link" href="https://facebook.com/Puzzlout" rel="noopener noreferrer" target="_blank" title="Visitez notre page Facebook" aria-label="Visitez notre page Facebook">Visitez notre page Facebook</a>
+            <a class="social-link" href="https://twitter.com/puzzlout" rel="noopener noreferrer" title="Retrouvez-nous sur Twitter" aria-label="Retrouvez-nous sur Twitter">Retrouvez-nous sur Twitter</a>
+        </div>
+    </footer>
+    <script src="js/navigation.js"></script>
+</body>
+
+</html>

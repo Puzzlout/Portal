@@ -1,0 +1,300 @@
+/*===================================*/
+/* Layout */
+/* Mobile */
+/* Header */
+header>* {
+    grid-column: 2 / -2;
+    justify-items: start;
+}
+
+.header-home {
+    position: absolute;
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-accent {
+    height: 3em;
+    display: flex;
+    align-items: flex-end;
+}
+
+.logo-accent a {
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+/* Navigation */
+
+nav {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 1000%;
+    transform: translateX(0);
+    transition: transform 250ms;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.toggle-nav {
+    justify-self: flex-end;
+    align-self: center;
+}
+
+.close-nav {
+    align-self: start;
+    padding: 1em 1em 0.75em;
+    grid-column: 1 / span 1;
+}
+
+.toggling-nav {
+    transform: translateX(-1000%);
+}
+
+.closing-nav {
+    transform: translateX(100%);
+    transition-duration: 0.5s;
+    transition-property: transform;
+}
+
+/* Hero */
+.hero {
+    background-image: url(../img/hero-1900w.jpg);
+    // background-image: image-set('../img/hero-300w.jpg'2x,
+    //         '../img/hero-600w.jpg'2x,
+    //         '../img/hero-1900w.jpg'1x,
+    //     );
+    background-size: cover;
+    background-position: bottom;
+    padding: 6em 0 4em;
+}
+
+.hero>* {
+    /* Centers the content of hero into the middle column */
+    grid-column: 2 / -2;
+}
+
+/* Skills */
+
+.skills {
+    padding: 4em 0;
+    text-align: center;
+}
+
+.skill {
+    grid-column: 2 / -2;
+    margin-bottom: 2em;
+}
+
+.skill:last-child {
+    margin-bottom: 0;
+}
+
+/* Affiliates */
+
+.promo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 6em;
+}
+.affiliate {
+    width: 30%;
+}
+.affiliate:hover { background-color: transparent; }
+/* Footer */
+
+footer {
+    grid-template-areas:
+        ". social ."
+        ". main .";
+    padding: 2em 0;
+    text-align: center;
+}
+
+.footer-main {
+    grid-area: main;
+}
+
+.social-links {
+    grid-area: social;
+    margin-bottom: 1em;
+}
+
+.social-link {
+    display: block;
+}
+
+/* Breakpoint: 360px */
+@media (max-width: 359px) {
+    .hero {
+        background-image: url(../img/puzzle-1900w.jpg);
+        height: 100vh;
+        padding: 8em 0 4em;
+    }
+
+    .hero>* {
+        align-self: baseline;
+    }
+
+    .hero-title {
+        font-weight: normal;
+        margin-bottom: 1em;
+    }
+
+    .hero-description {
+        display: none;
+    }
+
+    .services-action {
+        align-self: end;
+    }
+}
+
+/* Breakpoint: 400px */
+@media (min-width: 400px) {
+    .hero {
+        padding: 8em 0 4em;
+    }
+}
+
+/* Breakpoint: 600px */
+@media (max-width: 600px) {
+
+    .hero-title,
+    .hero-description {
+        margin-right: 20%;
+    }
+
+}
+
+@media (min-width: 600px) {
+
+    .toggle-nav,
+    .close-nav {
+        display: none;
+    }
+
+    .nav-list {
+        position: initial;
+        top: initial;
+        bottom: initial;
+        right: initial;
+        left: initial;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .nav-link {
+        margin-top: 0;
+        margin-left: 2em;
+    }
+
+    .hero {
+        padding: 8em 0 4em;
+        background-position: center;
+    }
+
+    .hero>* {
+        grid-column: 2 / span 2;
+    }
+
+    .skills {
+        padding: 6em 0;
+    }
+
+    .skill {
+        grid-column: span 1;
+    }
+
+    .skill:first-child {
+        /*Skip for the first skill the first column */
+        grid-column: 2 / span 1;
+    }
+
+    footer {
+        grid-template-areas: ". main main social .";
+        padding: 6em 0;
+    }
+
+    .footer-main {
+        text-align: left;
+    }
+
+    .social-links {
+        justify-self: end;
+    }
+}
+
+/* Breakpoint: 800px */
+@media (min-width: 801px) {
+
+    footer {
+        grid-template-areas: ". main main social .";
+    }
+
+    .social-links {
+        grid-column: -3;
+    }
+}
+
+/* Breakpoint: 1400px */
+@media (min-width: 1400px) {
+    .hero {
+        padding: 12em 0 8em;
+    }
+
+    .skills,
+    footer {
+        padding: 8em 0;
+    }
+}
+
+/* Disable Mobile menu */
+nav {
+    position: initial;
+    left: initial;
+    top: initial;
+    right: initial;
+    bottom: initial;
+}
+
+.nav-list {
+    background-color: initial !important;
+    display: flex;
+}
+
+@media (min-width: 600px) {
+    .nav-list {
+        justify-content: flex-end;
+    }
+}
+
+.nav-link,
+.toggle-nav,
+.close-nav {
+    display: none;
+}
+
+.nav-link:last-child {
+    display: inline;
+    align-self: flex-end;
+    margin: initial;
+}
+
+/* End - Disable Mobile menu */
+/* End Layout */
+/*===================================*/
