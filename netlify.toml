@@ -1,0 +1,8 @@
+# [[redirects]]
+# from = "/"
+# to = "/en"
+
+#[[headers]]
+#for = "/*"
+#[headers.values]
+#Content-Security-Policy = "default-src 'self';"

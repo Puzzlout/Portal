@@ -1,0 +1,21 @@
+{
+    "default_locale": "fr",
+    "name": "Puzzlout",
+    "short_name": "Puzzlout",
+    "description": "Notre mission : Trouver une solution à vos besoins avec le Web.",
+    "icons": [{
+        "src": "/icons/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any maskable"
+    }, {
+        "src": "/icons/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+    }],
+    "start_url": "https://puzzlout.com/fr/",
+    "display": "fullscreen",
+    "theme_color": "#184DEC",
+    "background_color": "#184DEC"
+}

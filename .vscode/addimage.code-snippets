@@ -1,0 +1,18 @@
+{
+  "Image": {
+    "scope": "markdown",
+    "prefix": "set image",
+    "body": [
+      "![$1](./images/$2.jpg)"
+    ],
+    "description": "Add an image in a post where the inputs are 1) the image description, and 2) the image filename in the folder .vuepress/public/images"
+  },
+  "Image + Credits": {
+    "scope": "markdown",
+    "prefix": "set image dutch f",
+    "body": [
+      "![$1](./images/$2.jpg \"Credits: \")"
+    ],
+    "description": "Add an image in a post where the inputs are 1) the image description, and 2) the image filename in the folder .vuepress/public/images"
+  }
+}

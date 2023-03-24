@@ -1,0 +1,20 @@
+{
+    "name": "Puzzlout",
+    "short_name": "Puzzlout",
+    "description": "Our mission: Solving your life 's puzzles with the Web.",
+    "icons": [{
+        "src": "/icons/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any maskable"
+    }, {
+        "src": "/icons/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+    }],
+    "start_url": "https://puzzlout.com/",
+    "display": "fullscreen",
+    "theme_color": "#184DEC",
+    "background_color": "#184DEC"
+}

@@ -1,62 +1,61 @@
-# Initial setup
+# Portal website of Puzzlout company using [Mr Hope very feature-rich VuePress theme](https://theme-hope.vuejs.press/)
 
-## Install latest Node
+<!-- [![Netlify Status](https://api.netlify.com/api/v1/badges/aabaf9be-15b0-4ddc-9944-be4c7aff5057/deploy-status)](https://app.netlify.com/sites/passonslecap/deploys) -->
 
-Go to [Node website](https://nodejs.org/en/download/).
+## Table of contents
 
-## Initialize your project
+[Prerequisites](#prerequisites)
 
-`npm init` and fill the inputs.
+[Getting started](#getting-started)
 
-## Install gulp globally
+[VuePress changelogs and upgrade](#vuepress-changelogs-and-upgrade)
 
-Go to [Gulp getting started](https://gulpjs.com/docs/en/getting-started/quick-start).
+[VuePress theme upgrade](#vuepress-theme-changelost-and-upgrade)
 
-## Install gulp in the project
+## Prerequisites
+
+- [Git bash](https://git-scm.com/downloads)
+- [NodeJS 18.0.0](https://nodejs.org/en/blog/release/v16.13.1/)
+- [Latest Visual Studio Code](https://code.visualstudio.com/download)
+
+## Getting started
+
+Using yarn makes the installation **much quicker**.
 
 ```sh
-npm install --save-dev gulp
+npm install --global yarn #(or use the .msi => https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
+yarn
 ```
 
-## Install the dev dependencies
+Then, launch the project locally:
 
 ```sh
-npm install --save-dev browser-sync
-npm install --save-dev del
-npm install --save-dev gulp-header
-npm install --save-dev gulp-rename
-npm install --save-dev gulp-flatmap
-npm install --save-dev lazypipe
-npm install --save-dev gulp-jshint
-npm install --save-dev jshint
-npm install --save-dev jshint-stylish
-npm install --save-dev gulp-concat
-npm install --save-dev gulp-terser
-npm install --save-dev gulp-optimize-js
-npm install --save-dev gulp-sass
-npm install --save-dev gulp-postcss
-npm install --save-dev autoprefixer
-npm install --save-dev cssnano
-npm install --save-dev gulp-svgmin
-
+npm run docs:dev
 ```
 
-## Install Font Awesome Pro
+Or to build it:
 
-Create a `.npmrc` file with the following content:
-
-```txt
-@fortawesome:registry=https://npm.fontawesome.com/
-//npm.fontawesome.com/:_authToken=${FONTAWESOME_NPM_AUTH_TOKEN}
+```sh
+npm run docs:build
 ```
 
-Then run `FONTAWESOME_NPM_AUTH_TOKEN=YOUR_FA_TOKEN npm install --save @fortawesome/fontawesome-pro`.
+## VuePress changelogs and upgrade
 
-You can find the token on your [Font Awesome account](https://fontawesome.com/account) under `Pro npm Package Token` section.
+See [this link](https://github.com/vuepress/vuepress-next/blob/main/CHANGELOG.md).
 
-If any issue arise, [checkout Font Awesome website](https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers).
+When upgrading and having issues with builds, use the following commands:
 
-## Setup in Netlify
+1. run `yarn upgrade vuepress-vite@2.0.0-beta.XX`
+2. run `rm -R node_modules && rm yarn.lock && yarn install`
+3. run `npm run docs:build`
+4. run `npm run docs:dev` to see if the site loads and renders well :)
 
-- Set the command `gulp` in the deploy settings.
-- Add the environment variable `FONTAWESOME_NPM_AUTH_TOKEN` with the token value.
+## VuePress theme changelost and upgrade
+
+See [this link](https://github.com/vuepress-theme-hope/vuepress-theme-hope/releases).
+
+Run:
+
+```sh
+yarn upgrade vuepress-theme-hope@2.0.0-beta.XX
+```
