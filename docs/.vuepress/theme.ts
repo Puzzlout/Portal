@@ -43,7 +43,7 @@ export default hopeTheme({
     //   mapping: 'title',
     // },
     mdEnhance: {
-      linkCheck: 'always',
+      checkLinks: 'always',
       //See https://vuepress-theme-hope.github.io/v2/guide/markdown/align.html
       align: true,
       //See https://vuepress-theme-hope.github.io/v2/guide/markdown/attrs.html
