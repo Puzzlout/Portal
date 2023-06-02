@@ -33,7 +33,7 @@ export default hopeTheme({
   footer:
     'GPLv3 Licensed | <a href="/page/terms" title="Read terms of the website">Terms</a>',
   plugins: {
-    blog: true,
+    blog: false,
     // comment: {
     //   provider: 'Giscus',
     //   repo: 'JeremieLitzler/journal',
