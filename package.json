@@ -13,10 +13,11 @@
     "docs": "vuepress-vite build docs && vuepress-vite dev docs",
     "publish": "vuepress-vite build docs && git push"
   },
+  "packageManager": "yarn@4.0.1",
   "devDependencies": {
     "vuepress-vite": "2.0.0-beta.67"
   },
   "dependencies": {
-    "vuepress-theme-hope": "2.0.0-beta.237"
+    "vuepress-theme-hope": "2.0.0-beta.245"
   }
 }
