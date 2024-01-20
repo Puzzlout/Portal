@@ -1,6 +1,6 @@
 {
   "name": "puzzlout-portal",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "The website of Puzzlout company",
   "main": "index.js",
   "repository": "https://github.com/Puzzlout/Portal",
@@ -13,11 +13,12 @@
     "docs": "vuepress-vite build docs && vuepress-vite dev docs",
     "publish": "vuepress-vite build docs && git push"
   },
-  "packageManager": "yarn@4.0.1",
+  "packageManager": "yarn@4.0.2",
   "devDependencies": {
-    "vuepress-vite": "2.0.0-beta.67"
+    "vuepress-vite": "2.0.0-rc.0"
   },
   "dependencies": {
-    "vuepress-theme-hope": "2.0.0-beta.245"
+    "vuepress-plugin-pwa2": "2.0.0-rc.11",
+    "vuepress-theme-hope": "2.0.0-rc.11"
   }
 }
