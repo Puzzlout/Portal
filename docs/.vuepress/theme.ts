@@ -51,7 +51,7 @@ export default hopeTheme({
       //See https://vuepress-theme-hope.github.io/v2/guide/markdown/chart.html
       //chart: true,
       //See https://vuepress-theme-hope.github.io/v2/guide/markdown/container.html
-      container: true,
+      hint: true,
       //See https://vuepress-theme-hope.github.io/v2/guide/markdown/echarts.html
       // echarts: true,
       //See https://vuepress-theme-hope.github.io/v2/guide/markdown/footnote.html
