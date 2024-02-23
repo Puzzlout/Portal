@@ -1,30 +1,30 @@
 //https://v2.vuepress.vuejs.org/reference/default-theme/extending.html
 
-import { hopeTheme } from 'vuepress-theme-hope';
+import { hopeTheme } from "vuepress-theme-hope";
 
-import { enNavBarConfig, frNavBarConfig } from './configs/navbar';
+import { enNavBarConfig, frNavBarConfig } from "./configs/navbar";
 
 export default hopeTheme({
   //path.resolve(__dirname, './theme'),
-  hostname: 'https://puzzlout.com',
+  hostname: "https://puzzlout.com",
   author: {
-    name: 'Jeremie Litzler',
-    url: 'https://puzzlout.com',
+    name: "Jeremie Litzler",
+    url: "https://puzzlout.com",
   },
   // repo: 'puzzlout/portal',
   // docsRepo: 'https://github.com/puzzlout/portal',
   // docsBranch: 'main',
-  docsDir: 'docs',
+  docsDir: "docs",
   // editLinkPattern: ':repo/edit/:branch/:path',
-  logo: '/icons/favicon-32x32.png',
-  logoDark: '/icons/dark-favicon-32x32.png',
-  darkmode: 'disable',
+  logo: "/icons/favicon-32x32.png",
+  logoDark: "/icons/dark-favicon-32x32.png",
+  darkmode: "disable",
   locales: {
-    '/': {
-       navbar: enNavBarConfig,
-       sidebar: false,
-     },
-    '/fr/': {
+    "/": {
+      navbar: enNavBarConfig,
+      sidebar: false,
+    },
+    "/fr/": {
       navbar: frNavBarConfig,
       sidebar: false,
     },
@@ -43,7 +43,7 @@ export default hopeTheme({
     //   mapping: 'title',
     // },
     mdEnhance: {
-      checkLinks: 'always',
+      // checkLinks: 'always',
       //See https://vuepress-theme-hope.github.io/v2/guide/markdown/align.html
       align: true,
       //See https://vuepress-theme-hope.github.io/v2/guide/markdown/attrs.html

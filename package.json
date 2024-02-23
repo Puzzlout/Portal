@@ -1,6 +1,6 @@
 {
   "name": "puzzlout-portal",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "The website of Puzzlout company",
   "main": "index.js",
   "repository": "https://github.com/Puzzlout/Portal",
